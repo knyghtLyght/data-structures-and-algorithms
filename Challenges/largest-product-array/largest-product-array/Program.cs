@@ -7,7 +7,6 @@ namespace largest_product_array
         static void Main(string[] args)
         {
             int[,] test2D = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
-            //int[][] jagged = new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 } };
             int result = LargestProduct(test2D);
             Console.WriteLine(result);
             Console.ReadLine();
@@ -15,10 +14,11 @@ namespace largest_product_array
 
         static int LargestProduct(int[,] input)
         {
+            int runLength = input.Length/2; //The arrays length is total not pairs so I need to cut my loop in half
             int largest = 0;
-            for (int i = 0; i < input.Length; i++)
+            for (int i = 0; i < runLength; i++)
             {
-                if (i < input.Length-1)
+                if (i == runLength - 1) //The last index has only one comperision to make
                 {
                     int dimOne = input[i, 0] * input[i, 1];
                     if (dimOne > largest)
