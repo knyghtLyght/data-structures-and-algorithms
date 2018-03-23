@@ -7,12 +7,15 @@ namespace largest_product_array
         static void Main(string[] args)
         {
             int[,] test2D = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+            //int[,] test2D = new int[,] { { 4, 2 }, { 8, 4 }, { 2, 6 }, { 5, 8 } };
+            //int[,] test2D = new int[,] { { 1, 6 }, { 3, 3 }, { 5, 9 }, { 7, 7 } };
+
             int result = LargestProduct(test2D);
             Console.WriteLine(result);
             Console.ReadLine();
         }
 
-        static int LargestProduct(int[,] input)
+        public static int LargestProduct(int[,] input)
         {
             int runLength = input.Length/2; //The arrays length is total not pairs so I need to cut my loop in half
             int largest = 0;
