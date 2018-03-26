@@ -6,7 +6,6 @@ namespace Linked_List
 {
     class LinkedList
     {
-
         // The list is initially empty.
         private Node head = null;
 
@@ -17,6 +16,11 @@ namespace Linked_List
             newNode.Next = head;
             newNode.Value = 0;
             head = newNode;
+        }
+
+        public int GetValue()
+        {
+
         }
     }
 }
