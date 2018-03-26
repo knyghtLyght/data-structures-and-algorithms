@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Linked_List
 {
-    class Node
+    public class Node
     {
         // The node holds an int value
         public int Value { get; set; }
