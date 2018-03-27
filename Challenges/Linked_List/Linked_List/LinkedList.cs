@@ -31,5 +31,39 @@ namespace Linked_List
             }
             return head; //If not in the list set to the head node
         }
+
+        public void AddToEnd(int newValue)
+        {
+            Node newNode = head;
+            while (newNode.Next != null)
+            {
+                newNode = newNode.Next;
+            }
+            newNode.Next = null;
+            newNode.Value = newValue;
+        }
+
+        public void InsertBefore(int targetValue, int newValue)
+        {
+            Node newNode = head;
+            while (newNode.Next != null)
+            {
+                if (newNode.Next.Value == targetValue)
+                {
+                    Node preNode = Find(newNode.Value);
+                    newNode.Next = preNode.Next.Next;
+                    preNode.Next = newNode;
+                    newNode.Value = newValue;
+                }
+            }
+        }
+
+        public void insertAfter(int targetValue, int newValue)
+        {
+            Node newNode = new Node();
+            Node targetNode = Find(targetValue);
+            newNode.Next = targetNode.Next;
+            targetNode.Next = newNode;
+        }
     }
 }
