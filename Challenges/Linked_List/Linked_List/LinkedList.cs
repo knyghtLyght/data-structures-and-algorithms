@@ -13,7 +13,7 @@ namespace Linked_List
         public void Add(int value)
         {
             Node newNode = new Node(); //Make the new Node
-            newNode.Next = head; // Set the nodes referance for the first in the lost
+            newNode.Next = head; // Set the nodes referance for the first in the list
             newNode.Value = value; // Set the new nodes data
             head = newNode; //set the new node as the head or fist in the list
         }
@@ -58,12 +58,21 @@ namespace Linked_List
             }
         }
 
-        public void insertAfter(int targetValue, int newValue)
+        public void InsertAfter(int targetValue, int newValue)
         {
             Node newNode = new Node();
             Node targetNode = Find(targetValue);
             newNode.Next = targetNode.Next;
             targetNode.Next = newNode;
+        }
+
+        public void PrintToConsole()
+        {
+            Node step = head;
+            while (step.Next != null)
+            {
+                Console.WriteLine(step.Value);
+            }
         }
     }
 }

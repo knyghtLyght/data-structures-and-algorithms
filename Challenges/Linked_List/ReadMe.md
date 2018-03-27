@@ -7,3 +7,5 @@ Reflecting back on the linked list lecture in class, implement a Singly linked l
 O(1) - .Add() - adds a node to the front of the linked list
 O(n) - .Find() - Finds a specific value in the linked list
 
+## Solution
+![ll_insertions](../../assets/ll_insertions.jpg)

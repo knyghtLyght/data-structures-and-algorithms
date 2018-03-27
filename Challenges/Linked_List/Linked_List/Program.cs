@@ -13,8 +13,9 @@ namespace Linked_List
             testList.Add(4);
             testList.Add(5);
             Console.WriteLine(testList.Find(3).Value);
+            testList.PrintToConsole();
             Console.ReadLine();
-
+            
         }
     }
 }
