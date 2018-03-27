@@ -85,5 +85,29 @@ namespace Linked_List
             sb.Append($"{step.Value} ");
             return sb.ToString();
         }
+        // Helper length method to make kthFromEnd shorter
+        public int ListLength()
+        {
+            Node runner = new Node();
+            runner.Next = head;
+            int length = 0;
+            while (runner.Next != null)
+            {
+                length++;
+                runner = runner.Next;
+            }
+            return length;
+        }
+
+        public Node kthFromEnd(int k)
+        {
+            Node runner = new Node();
+            runner.Next = head;
+            for (int i = 0; i <= ListLength() - k; i++)
+            {
+                runner = runner.Next;
+            }
+            return runner;
+        }
     }
 }

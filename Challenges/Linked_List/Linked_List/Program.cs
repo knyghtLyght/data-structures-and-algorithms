@@ -25,6 +25,10 @@ namespace Linked_List
             testList.InsertAfter(3, 12);
             Console.WriteLine(testList.PrintToString());
             Console.ReadLine();
+            Console.WriteLine(testList.ListLength());
+            Console.ReadLine();
+            Console.WriteLine(testList.kthFromEnd(3).Value);
+            Console.ReadLine();
         }
     }
 }

@@ -73,5 +73,21 @@ namespace LinkedListPage
 
             Assert.Equal(expected, testList.PrintToString());
         }
+        [Theory]
+        [InlineData(3, 3)]
+        [InlineData(2, 2)]
+        [InlineData(4, 4)]
+        public void CanFinPosition (int target, int expected)
+        {
+            LinkedList testList = new LinkedList();
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+
+            Assert.Equal(expected, testList.kthFromEnd(target).Value);
+        }
+
     }
 }
