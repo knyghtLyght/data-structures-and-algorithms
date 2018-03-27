@@ -13,9 +13,18 @@ namespace Linked_List
             testList.Add(4);
             testList.Add(5);
             Console.WriteLine(testList.Find(3).Value);
-            testList.PrintToConsole();
             Console.ReadLine();
-            
+            Console.WriteLine(testList.PrintToString()); 
+            Console.WriteLine();
+            testList.AddToEnd(0);
+            Console.WriteLine(testList.PrintToString());
+            Console.ReadLine();
+            testList.InsertBefore(3, 10);
+            Console.WriteLine(testList.PrintToString());
+            Console.ReadLine();
+            testList.InsertAfter(3, 12);
+            Console.WriteLine(testList.PrintToString());
+            Console.ReadLine();
         }
     }
 }
