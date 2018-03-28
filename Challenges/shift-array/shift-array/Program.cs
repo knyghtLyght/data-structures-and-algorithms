@@ -2,7 +2,7 @@
 
 namespace shift_array
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -20,12 +20,12 @@ namespace shift_array
             Console.ReadLine();
         }
 
-        static int[] ShiftArray (int[] input, int valueToAdd)
+        public static int[] ShiftArray (int[] input, int valueToAdd)
         {
             int startLength = input.Length;
             int[] returnArray = new int[startLength + 1];
             int midPoint = startLength / 2;
-            for (int i = 0; i < startLength-1; i++)
+            for (int i = 0; i <= startLength-1; i++)
             {
                 if (i < midPoint)
                 {
