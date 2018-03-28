@@ -34,45 +34,80 @@ namespace Linked_List
 
         public void AddToEnd(int newValue)
         {
-            Node newNode = head;
-            while (newNode.Next != null)
+            Node runner = head;
+            Node newNode = new Node();
+            while (runner.Next != null)
             {
-                newNode = newNode.Next;
+                runner = runner.Next;
             }
+            runner.Next = newNode;
             newNode.Next = null;
             newNode.Value = newValue;
         }
 
         public void InsertBefore(int targetValue, int newValue)
         {
-            Node newNode = head;
-            while (newNode.Next != null)
+            Node runner = head;
+            while (runner.Next != null)
             {
-                if (newNode.Next.Value == targetValue)
+                if (runner.Next.Value == targetValue)
                 {
-                    Node preNode = Find(newNode.Value);
-                    newNode.Next = preNode.Next.Next;
+                    Node preNode = Find(runner.Value);
+                    Node newNode = new Node();
+                    newNode.Next = preNode.Next;
                     preNode.Next = newNode;
                     newNode.Value = newValue;
+                    break;
                 }
+                runner = runner.Next;
             }
         }
 
         public void InsertAfter(int targetValue, int newValue)
         {
             Node newNode = new Node();
+            newNode.Value = newValue;
             Node targetNode = Find(targetValue);
             newNode.Next = targetNode.Next;
             targetNode.Next = newNode;
         }
 
-        public void PrintToConsole()
+        public string PrintToString()
         {
+            StringBuilder sb = new StringBuilder("");
+
             Node step = head;
             while (step.Next != null)
             {
-                Console.WriteLine(step.Value);
+                sb.Append($"{step.Value} ");
+                step = step.Next;
             }
+            sb.Append($"{step.Value} ");
+            return sb.ToString();
+        }
+        // Helper length method to make kthFromEnd shorter
+        public int ListLength()
+        {
+            Node runner = new Node();
+            runner.Next = head;
+            int length = 0;
+            while (runner.Next != null)
+            {
+                length++;
+                runner = runner.Next;
+            }
+            return length;
+        }
+
+        public Node kthFromEnd(int k)
+        {
+            Node runner = new Node();
+            runner.Next = head;
+            for (int i = 0; i <= ListLength() - k; i++)
+            {
+                runner = runner.Next;
+            }
+            return runner;
         }
     }
 }
