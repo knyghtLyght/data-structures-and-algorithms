@@ -40,7 +40,7 @@ namespace Linked_List
             testListTwo.Add(2);
             testListTwo.Add(3);
             testListTwo.Add(4);
-            testListOne.MergeLists(testListOne, testListTwo);
+            testListOne.MergeLists(testListTwo);
             Console.WriteLine(testListOne.PrintToString());
             Console.ReadLine();
         }
