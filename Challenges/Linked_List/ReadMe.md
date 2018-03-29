@@ -1,4 +1,4 @@
-﻿# Binary Search
+﻿# Linked List
 A data structure chalnge to help us understand the 
 
 ## Challenge
