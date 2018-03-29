@@ -109,5 +109,10 @@ namespace Linked_List
             }
             return runner;
         }
+
+        public Node mergeLists(LinkedList listOne, LinkedList listTwo)
+        {
+
+        }
     }
 }
