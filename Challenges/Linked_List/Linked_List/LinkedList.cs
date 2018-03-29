@@ -110,14 +110,14 @@ namespace Linked_List
             return runner;
         }
 
-        public Node MergeLists(LinkedList listOne, LinkedList listTwo)
+        public Node MergeLists(LinkedList inputList)
         {
-            Node runnerOne = listOne.head;
-            Node runnerTwo = listTwo.head;
-            int limit = listTwo.ListLength();
-            if (listOne.ListLength() < listTwo.ListLength())
+            Node runnerOne = head;
+            Node runnerTwo = inputList.head;
+            int limit = inputList.ListLength();
+            if (ListLength() < inputList.ListLength())
             {
-                limit = listOne.ListLength();
+                limit = ListLength();
             }
             while (runnerTwo.Next != null)
             {
@@ -125,7 +125,7 @@ namespace Linked_List
                 runnerOne = runnerOne.Next;
                 runnerTwo = runnerTwo.Next;
             }
-            return listOne.head;
+            return head;
         }
     }
 }
