@@ -109,5 +109,23 @@ namespace Linked_List
             }
             return runner;
         }
+
+        public Node MergeLists(LinkedList listOne, LinkedList listTwo)
+        {
+            Node runnerOne = listOne.head;
+            Node runnerTwo = listTwo.head;
+            int limit = listTwo.ListLength();
+            if (listOne.ListLength() < listTwo.ListLength())
+            {
+                limit = listOne.ListLength();
+            }
+            while (runnerTwo.Next != null)
+            {
+                InsertBefore(runnerOne.Next.Value, runnerTwo.Value);
+                runnerOne = runnerOne.Next;
+                runnerTwo = runnerTwo.Next;
+            }
+            return listOne.head;
+        }
     }
 }
