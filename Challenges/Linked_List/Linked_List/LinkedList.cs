@@ -127,5 +127,18 @@ namespace Linked_List
             }
             return head;
         }
+
+        public bool hasLoop()
+        {
+            int lemgth = ListLength();
+            bool hasLoop = false;
+            Node runner = new Node();
+            runner.Next = head;
+            for (int i = 0; i < lemgth; i++)
+            {
+                if (runner.Next == null) hasLoop = true;
+            }
+            return hasLoop;
+        }
     }
 }
