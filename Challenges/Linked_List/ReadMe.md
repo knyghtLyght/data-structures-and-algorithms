@@ -20,3 +20,5 @@ Write a function called mergeLists which takes two linked lists as arguments. Zi
 ![ll_insertions](../../assets/ll_insertions.jpg)
 ![ll-kth-from-end](../../assets/ll-kth-from-end.jpg)
 ![ll-merge](../../assets/ll-merge.jpg)
+![hasLoop](../../assets/hasLoop.jpg)
+
