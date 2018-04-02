@@ -15,13 +15,13 @@ namespace StackAndQueue
             bottom = node;
         }
 
-        public void Push(Node node)
+        public void Endqueue(Node node)
         {
             node.Next = Top;
             Top = node;
         }
 
-        public Node Pop()
+        public Node Dequeue()
         {
             Node pop = Top;
             if (bottom == Top)
