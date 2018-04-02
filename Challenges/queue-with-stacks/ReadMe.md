@@ -1,8 +1,13 @@
-# Binary Search
+# Queue with Stacks
 A whieboard challenege intended to help us understand data structures. 
 
 ## Challenge
-Write a function called LargestProduct which takes in a 2D array. Without utilizing any of the built-in methods available to your language, return the largest product of 2 adjacent values within the 2D array.
+Implement the following methods for the Queue class:
+
+enqueue(value) which inserts value into the Queue using a first-in, first-out approach.
+dequeue() which extracts a value from the Queue using a first-in, first-out approach.
+
+You have access to 2 Stack instances with push and pop methods.
 
 ## Solution
-![largest_product_array.jpg](../../assets/largest_product_array.jpg)
+![queue-with-stacks](../../assets/queue-with-stacks.jpg)
