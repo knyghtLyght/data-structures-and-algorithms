@@ -119,10 +119,14 @@ namespace Linked_List
             {
                 limit = ListLength();
             }
-            while (runnerTwo.Next != null)
+            for(int i = 0; i < limit; i++)
             {
-                InsertBefore(runnerOne.Next.Value, runnerTwo.Value);
-                runnerOne = runnerOne.Next;
+                InsertAfter(runnerOne.Value, runnerTwo.Value);
+                if (i == limit)
+                {
+                    break;
+                }
+                runnerOne = runnerOne.Next.Next;
                 runnerTwo = runnerTwo.Next;
             }
             return head;

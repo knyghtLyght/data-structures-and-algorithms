@@ -8,39 +8,39 @@ namespace StackAndQueue
     {
         public Node Front { get; set; }
 
-        public int QueueLength()
-        {
-            Node runner = new Node();
-            int length = 0;
-            do
-            {
-                length++;
-            } while (runner.Next != null);
-            return length;
-        }
+        //public int QueueLength()
+        //{
+        //    Node runner = new Node();
+        //    int length = 0;
+        //    do
+        //    {
+        //        length++;
+        //    } while (runner.Next != null);
+        //    return length;
+        //}
 
         public MyQueue(Node node)
         {
             node.Next = null;
-            Front = node;
+            Front = node; //Set inital node to the front
         }
 
-        public void Push(Node node)
+        public void Enqueue(Node node)
         {
             Node runner = new Node();
-            runner = Front;
+            runner = Front; //Set a runner at the front running to the back
             while (runner.Next != null)
             {
                 runner = runner.Next;
             }
-            runner.Next = node;
+            runner.Next = node; //Set the new node as the tail end
             node.Next = null;
         }
 
-        public Node Pop()
+        public Node Dequeue()
         {
-            Node pop = Front;
-            Front = Front.Next;
+            Node pop = Front; //Grab the return ref
+            Front = Front.Next; //pass the front to the next in line
             return pop;
         }
 

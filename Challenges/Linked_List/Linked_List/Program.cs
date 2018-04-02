@@ -29,17 +29,20 @@ namespace Linked_List
             Console.ReadLine();
             Console.WriteLine(testList.kthFromEnd(3).Value);
             Console.ReadLine();
+
             LinkedList testListOne = new LinkedList();
             testListOne.Add(1);
             testListOne.Add(2);
             testListOne.Add(3);
             testListOne.Add(4);
             testListOne.Add(5);
+
             LinkedList testListTwo = new LinkedList();
-            testListTwo.Add(1);
-            testListTwo.Add(2);
-            testListTwo.Add(3);
-            testListTwo.Add(4);
+            testListTwo.Add(6);
+            testListTwo.Add(7);
+            testListTwo.Add(8);
+            testListTwo.Add(9);
+
             testListOne.MergeLists(testListTwo);
             Console.WriteLine(testListOne.PrintToString());
             Console.ReadLine();

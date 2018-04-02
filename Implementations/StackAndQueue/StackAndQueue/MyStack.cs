@@ -7,39 +7,22 @@ namespace StackAndQueue
     public class MyStack
     {
         public Node Top { get; set; }
-        public Node bottom;
-        //Node[] stackindex = new Node[5];
+
         public MyStack(Node node)
         {
-            Top = node;
-            bottom = node;
+            Top = node; //Set Top ref to inital node
         }
 
-        public void Endqueue(Node node)
+        public void Push(Node node)
         {
-            node.Next = Top;
-            Top = node;
+            node.Next = Top; //Give new Node ref pointing down
+            Top = node; //New node becomes top
         }
 
-        public Node Dequeue()
+        public Node Pop()
         {
-            Node pop = Top;
-            if (bottom == Top)
-            {
-                bottom = null;
-                return Top;
-            }
-            if (Top == null)
-            {
-                throw new Exception();
-            }
-            Node runner = bottom;
-            while (runner.Next != Top)
-            {
-                runner = runner.Next;
-            }
-            runner.Next = null;
-            Top = runner;
+            Node pop = Top; //Grab return ref
+            Top = Top.Next; //Set the next in line to top
             return pop;
         }
 
