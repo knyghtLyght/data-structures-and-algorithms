@@ -88,6 +88,5 @@ namespace LinkedListPage
 
             Assert.Equal(expected, testList.kthFromEnd(target).Value);
         }
-
     }
 }
