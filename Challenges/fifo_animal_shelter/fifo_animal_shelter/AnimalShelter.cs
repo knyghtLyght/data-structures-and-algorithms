@@ -48,5 +48,17 @@ namespace fifo_animal_shelter
                 return choice != 0 ? catQueue.Dequeue().Value : DogQueue.Dequeue().Value;
             }
         }
+
+        public Animal Peek(string pref)
+        {
+            if (pref == "cat")
+            {
+                return catQueue.Peek().Value;
+            }
+            else
+            {
+                return DogQueue.Peek().Value;
+            }
+        }
     }
 }
