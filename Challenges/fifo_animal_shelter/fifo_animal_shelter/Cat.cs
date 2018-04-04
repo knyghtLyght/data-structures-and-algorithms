@@ -6,6 +6,6 @@ namespace fifo_animal_shelter
 {
     public class Cat : Animal
     {
-        public string Name { get; set; }
+        public override string Name { get; set; }
     }
 }

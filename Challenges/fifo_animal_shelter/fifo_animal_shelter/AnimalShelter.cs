@@ -31,11 +31,21 @@ namespace fifo_animal_shelter
             }
         }
 
-        public Node Dequeue(string pref)
+        public Animal Dequeue(string pref)
         {
             if (pref == "cat")
             {
-
+                return catQueue.Dequeue().Value;
+            }
+            else if (pref == "dog")
+            {
+                return DogQueue.Dequeue().Value;
+            }
+            else
+            {
+                Random rand = new Random();
+                int choice = rand.Next(0, 1);
+                return choice != 0 ? catQueue.Dequeue().Value : DogQueue.Dequeue().Value;
             }
         }
     }
