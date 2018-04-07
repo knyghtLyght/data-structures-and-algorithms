@@ -6,14 +6,14 @@ namespace BinaryTree
 {
     public class MyTree
     {
-        public Node Root { get; set; }
+        public static Node Root { get; set; }
 
-        public MyTree(Node node)
+        public MyTree()
         {
-            Root = node;
+            Root = null;
         }
 
-        public void Add(Node node)
+        public void Add(Node add)
         {
 
         }
