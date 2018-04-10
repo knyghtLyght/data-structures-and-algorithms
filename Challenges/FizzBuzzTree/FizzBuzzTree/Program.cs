@@ -2,7 +2,7 @@
 
 namespace FizzBuzzTree
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -13,7 +13,7 @@ namespace FizzBuzzTree
         {
             int intVal = int.Parse(value);
             if (intVal % 3 == 0 && intVal % 5 == 0)  return "FizzBUzz";
-            if (intVal % 3 == 0) return "fizz";
+            if (intVal % 3 == 0) return "Fizz";
             if (intVal % 5 == 0) return "Buzz";
             else return value;
         }
