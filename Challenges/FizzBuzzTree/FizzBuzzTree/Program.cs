@@ -9,7 +9,7 @@ namespace FizzBuzzTree
             
         }
 
-        public string FizzBuzz(string value)
+        public FizzBuzz(string value)
         {
             int intVal = int.Parse(value);
             if (intVal % 3 == 0 && intVal % 5 == 0)  return "FizzBUzz";
