@@ -4,9 +4,9 @@ using System.Text;
 
 namespace FizzBuzzTree
 {
-    class MyTree
+    public class MyTree
     {
-        public static Node Root { get; set; }
+        public Node Root { get; set; }
 
         public MyTree()
         {
@@ -56,4 +56,5 @@ namespace FizzBuzzTree
             }
             Console.WriteLine(node.Value);
         }
+    }
 }

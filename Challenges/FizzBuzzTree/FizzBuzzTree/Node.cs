@@ -4,9 +4,9 @@ using System.Text;
 
 namespace FizzBuzzTree
 {
-    class Node
+    public class Node
     {
-        public int Value { get; set; }
+        public string Value { get; set; }
         public Node LeftChild { get; set; }
         public Node RightChild { get; set; }
     }
