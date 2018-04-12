@@ -7,6 +7,7 @@ namespace FizzBuzzTree
     public class MyTree
     {
         public Node Root { get; set; }
+        private string TraversalString { get; set; }
 
         public MyTree()
         {
@@ -18,43 +19,63 @@ namespace FizzBuzzTree
 
         }
 
-        public void InOrder(Node node)
+        public string InOrder()
+        {
+            TraversalString = "";
+            inOrderHelper(Root);
+            return TraversalString;
+        }
+        public void inOrderHelper(Node node)
         {
             if (node.LeftChild != null)
             {
-                InOrder(node.LeftChild);
+                inOrderHelper(node.LeftChild);
             }
-            Console.WriteLine(node.Value);
+            TraversalString = $"{TraversalString} {node.Value}";
             if (node.RightChild != null)
             {
-                InOrder(node.RightChild);
+                inOrderHelper(node.RightChild);
             }
         }
 
-        public void PreOrder(Node node)
+        public string PreOrder()
         {
-            Console.WriteLine(node.Value);
+            TraversalString = "";
+            PreOrderHelper(Root);
+            return TraversalString;
+        }
+
+        public void PreOrderHelper(Node node)
+        {
+            TraversalString = $"{TraversalString} {node.Value}";
             if (node.LeftChild != null)
             {
-                InOrder(node.LeftChild);
+                PreOrderHelper(node.LeftChild);
             }
             if (node.RightChild != null)
             {
-                InOrder(node.RightChild);
+                PreOrderHelper(node.RightChild);
             }
         }
 
-        public void PostOrder(Node node)
+        public string PostOrder()
+        {
+            TraversalString = "";
+            PostOrderHelper(Root);
+            return TraversalString;
+        }
+
+        public void PostOrderHelper(Node node)
         {
             if (node.LeftChild != null)
             {
-                InOrder(node.LeftChild);
+                PostOrderHelper(node.LeftChild);
             }
             if (node.RightChild != null)
             {
-                InOrder(node.RightChild);
+                PostOrderHelper(node.RightChild);
             }
-            Console.WriteLine(node.Value);
+            TraversalString = $"{TraversalString} {node.Value}";
         }
     }
 }

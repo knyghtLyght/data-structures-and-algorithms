@@ -6,25 +6,61 @@ namespace FizzBuzzTree
     {
         static void Main(string[] args)
         {
-            
+            MyTree testTree = new MyTree()
+            {
+                Root = new Node() //Root Level
+                {
+                    Value = "5",
+                    LeftChild = new Node() //Row 1
+                    {
+                        Value = "3",
+                        LeftChild = new Node() //Row 2
+                        {
+                            Value = "2"
+                        },
+                        RightChild = new Node() //Row 2
+                        {
+                            Value = "10"
+                        }
+                    },
+                    RightChild = new Node() //Row 1
+                    {
+                        Value = "15",
+                        LeftChild = new Node() //Row 2
+                        {
+                            Value = "12"
+                        },
+                        RightChild = new Node() //Row 2
+                        {
+                            Value = "11"
+                        }
+                    }
+                }
+            };
+
+            Console.WriteLine(testTree.InOrder());
+            Console.WriteLine();
+            FizzTree(testTree);
+            Console.WriteLine(testTree.InOrder());
+            Console.ReadLine();
         }
 
-        public FizzBuzz(string value)
+        public static string FizzBuzz(string value)
         {
             int intVal = int.Parse(value);
-            if (intVal % 3 == 0 && intVal % 5 == 0)  return "FizzBUzz";
+            if (intVal % 3 == 0 && intVal % 5 == 0)  return "FizzBuzz";
             if (intVal % 3 == 0) return "Fizz";
             if (intVal % 5 == 0) return "Buzz";
             else return value;
         }
 
-        public MyTree FizzTree(MyTree input)
+        public static MyTree FizzTree(MyTree input)
         {
             FBHelper(input.Root);
                 return input;
         }
 
-        public void FBHelper(Node node)
+        public static void FBHelper(Node node)
         {
             if (node.LeftChild != null)
             {
