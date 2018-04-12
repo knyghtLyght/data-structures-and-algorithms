@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "find_maximum_value_binary_tree", "find_maximum_value_binary_tree\find_maximum_value_binary_tree.csproj", "{34378E09-A66B-4E64-B5D8-A328665A9724}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ACC113F5-A155-40F2-A22F-9E99751BD3BD}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaxTest", "FindMaxTest\FindMaxTest.csproj", "{0A57DC9D-C56D-41AD-B9C4-EABE47B96515}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34378E09-A66B-4E64-B5D8-A328665A9724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34378E09-A66B-4E64-B5D8-A328665A9724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34378E09-A66B-4E64-B5D8-A328665A9724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34378E09-A66B-4E64-B5D8-A328665A9724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A57DC9D-C56D-41AD-B9C4-EABE47B96515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A57DC9D-C56D-41AD-B9C4-EABE47B96515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A57DC9D-C56D-41AD-B9C4-EABE47B96515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A57DC9D-C56D-41AD-B9C4-EABE47B96515}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDCBE92D-D9F2-43AA-95B7-9CC0DAC14098}
+	EndGlobalSection
+EndGlobal
