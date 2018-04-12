@@ -1,11 +1,18 @@
-﻿using System;
+using System;
+using Xunit;
+using find_maximum_value_binary_tree;
 
-namespace find_maximum_value_binary_tree
+namespace FindMaxTest
 {
-    class Program
+    public class UnitTest1
     {
-        static void Main(string[] args)
+        [Theory]
+        [InlineData(9)]
+        [InlineData(10)]
+        [InlineData(12)]
+        public void CanFindMax(int testMax)
         {
+            //Arrange
             MyTree testTree = new MyTree()
             {
                 Root = new Node() //Root Level
@@ -20,7 +27,7 @@ namespace find_maximum_value_binary_tree
                         },
                         RightChild = new Node() //Row 2
                         {
-                            Value = 8
+                            Value = testMax
                         }
                     },
                     RightChild = new Node() //Row 1
@@ -32,13 +39,13 @@ namespace find_maximum_value_binary_tree
                         },
                         RightChild = new Node() //Row 2
                         {
-                            Value = 9
+                            Value = 8
                         }
                     }
                 }
             };
-            Console.WriteLine(testTree.FindMaxValue());
-            Console.ReadLine();
+            //Act
+            Assert.Equal(testMax, testTree.FindMaxValue());
         }
     }
 }

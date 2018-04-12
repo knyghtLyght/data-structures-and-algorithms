@@ -6,7 +6,7 @@ namespace find_maximum_value_binary_tree
 {
     public class MyTree
     {
-        public static Node Root { get; set; }
+        public Node Root { get; set; }
         public int MaxValue { get; set; }
 
         public MyTree()
@@ -19,7 +19,27 @@ namespace find_maximum_value_binary_tree
 
         }
 
-        public 
+        public int FindMaxValue()
+        {
+            InOrderHelper(Root);
+            return MaxValue;
+        }
+
+        public void InOrderHelper(Node node)
+        {
+            if (node.LeftChild != null)
+            {
+                InOrderHelper(node.LeftChild);
+            }
+            if (node.Value > MaxValue)
+            {
+                MaxValue = node.Value;
+            }
+            if (node.RightChild != null)
+            {
+                InOrderHelper(node.RightChild);
+            }
+        }
 
         public void InOrder(Node node)
         {
