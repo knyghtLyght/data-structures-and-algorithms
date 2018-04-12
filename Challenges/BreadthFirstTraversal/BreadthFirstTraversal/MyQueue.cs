@@ -10,8 +10,8 @@ namespace BreadthFirstTraversal
 
         public MyQueue(Node node)
         {
-            node.Next = null;
             Front = node; //Set inital node to the front
+            node.Next = null;
         }
 
         public void Enqueue(Node node)

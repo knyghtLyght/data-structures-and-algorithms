@@ -1,11 +1,19 @@
-﻿using System;
+using System;
+using Xunit;
+using BreadthFirstTraversal;
+using static BreadthFirstTraversal.Program;
 
-namespace BreadthFirstTraversal
+namespace Test
 {
-    public class Program
+    public class UnitTest1
     {
-        static void Main(string[] args)
+        [Theory]
+        [InlineData("5 3 7 1 8 4 9 ", 3)]
+        [InlineData("5 10 7 1 8 4 9 ", 10)]
+        [InlineData("5 80 7 1 8 4 9 ", 80)]
+        public void CanTraverse(string expected, int testValue)
         {
+            //Arrange
             MyTree testTree = new MyTree()
             {
                 Root = new Node() //Root Level
@@ -13,7 +21,7 @@ namespace BreadthFirstTraversal
                     Value = 5,
                     LeftChild = new Node() //Row 1
                     {
-                        Value = 3,
+                        Value = testValue,
                         LeftChild = new Node() //Row 2
                         {
                             Value = 1
@@ -37,31 +45,8 @@ namespace BreadthFirstTraversal
                     }
                 }
             };
-
-            Console.WriteLine(BreadthFirst(testTree));
-            Console.ReadLine();
-        }
-
-        public static string BreadthFirst(MyTree input)
-        {
-            string answer = "";
-            Node runner = input.Root;
-            MyQueue stepQueue = new MyQueue(runner);
-            while (runner != null)
-            {
-                if (runner.LeftChild != null)
-                {
-                    stepQueue.Enqueue(runner.LeftChild);
-                }
-                if (runner.RightChild != null)
-                {
-                    stepQueue.Enqueue(runner.RightChild);
-                }
-                answer += $"{runner.Value} ";
-                runner = runner.Next;
-                stepQueue.Dequeue();
-            };
-            return answer;
+            //Assert
+            Assert.Equal(expected, BreadthFirst(testTree));
         }
     }
 }

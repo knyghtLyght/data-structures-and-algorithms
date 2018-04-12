@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BreadthFirstTraversal
 {
-    class MyTree
+    public class MyTree
     {
-        public static Node Root { get; set; }
-        public static int[] AddArray { get; set; }
+        public Node Root { get; set; }
+        private string TraversalString { get; set; }
 
         public MyTree()
         {
@@ -16,72 +16,66 @@ namespace BreadthFirstTraversal
 
         public void Add(Node add)
         {
-            if (Root == null)
-            {
-                Root = add;
-                return;
-            }
-            PreOrder(Root);
-            
+
         }
 
-        public void BreadthFirst(Node runner)
+        public string InOrder()
         {
-            runner = Root;
-            MyQueue stepQueue = new MyQueue(runner);
-            do
-            {
-                if (runner.LeftChild != null)
-                {
-                    stepQueue.Enqueue(runner.LeftChild);
-                }
-                if (runner.RightChild != null)
-                {
-                    stepQueue.Enqueue(runner.RightChild);
-                }
-                Console.WriteLine(runner.Value);
-                runner = runner.Next;
-                stepQueue.Dequeue();
-            } while (Root.Next != null);
+            TraversalString = "";
+            inOrderHelper(Root);
+            return TraversalString;
         }
-
-        public void InOrder(Node node)
+        public void inOrderHelper(Node node)
         {
             if (node.LeftChild != null)
             {
-                InOrder(node.LeftChild);
+                inOrderHelper(node.LeftChild);
             }
-            Console.WriteLine(node.Value);
+            TraversalString = $"{TraversalString} {node.Value}";
             if (node.RightChild != null)
             {
-                InOrder(node.RightChild);
+                inOrderHelper(node.RightChild);
             }
         }
 
-        public void PreOrder(Node node)
+        public string PreOrder()
         {
-            AddArray.Add(node.Value);
+            TraversalString = "";
+            PreOrderHelper(Root);
+            return TraversalString;
+        }
+
+        public void PreOrderHelper(Node node)
+        {
+            TraversalString = $"{TraversalString} {node.Value}";
             if (node.LeftChild != null)
             {
-                InOrder(node.LeftChild);
+                PreOrderHelper(node.LeftChild);
             }
             if (node.RightChild != null)
             {
-                InOrder(node.RightChild);
+                PreOrderHelper(node.RightChild);
             }
         }
 
-        public void PostOrder(Node node)
+        public string PostOrder()
+        {
+            TraversalString = "";
+            PostOrderHelper(Root);
+            return TraversalString;
+        }
+
+        public void PostOrderHelper(Node node)
         {
             if (node.LeftChild != null)
             {
-                InOrder(node.LeftChild);
+                PostOrderHelper(node.LeftChild);
             }
             if (node.RightChild != null)
             {
-                InOrder(node.RightChild);
+                PostOrderHelper(node.RightChild);
             }
-            Console.WriteLine(node.Value);
+            TraversalString = $"{TraversalString} {node.Value}";
         }
     }
 }
