@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{440C8772-FF33-4D79-A8E5-6787A6ADBE5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeTest", "TreeTest\TreeTest.csproj", "{FB41FD09-B4A8-4C6C-AA55-5A80369AACBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeTest", "TreeTest\TreeTest.csproj", "{FB41FD09-B4A8-4C6C-AA55-5A80369AACBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
