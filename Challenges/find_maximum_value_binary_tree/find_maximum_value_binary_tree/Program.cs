@@ -37,8 +37,14 @@ namespace find_maximum_value_binary_tree
                     }
                 }
             };
-            Console.WriteLine(testTree.FindMaxValue());
+            Console.WriteLine(FindMaxValue(testTree));
             Console.ReadLine();
+        }
+
+        public static int FindMaxValue(MyTree tree)
+        {
+            tree.InOrderHelper(tree.Root);
+            return tree.MaxValue;
         }
     }
 }
