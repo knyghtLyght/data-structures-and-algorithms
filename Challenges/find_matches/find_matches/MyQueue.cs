@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace find_matches
+namespace Find_matches
 {
     public class MyQueue
     {

@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using find_matches;
+using Find_matches;
 
 namespace FindMatchTest
 {
@@ -25,7 +25,7 @@ namespace FindMatchTest
             testTree.Add(5, 2);
 
             //Assert
-            Assert.Equal(3, find_matches.Program.FindMatches(testTree, testValue).Count);
+            Assert.Equal(3, Find_matches.Program.FindMatches(testTree, testValue).Count);
         }
     }
 }
