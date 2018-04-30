@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace find_matches
+namespace Find_matches
 {
     public class Program
     {
