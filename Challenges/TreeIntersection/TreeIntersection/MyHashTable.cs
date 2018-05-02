@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HashTables
+namespace TreeIntersection
 {
     public class MyHashTable
     {
@@ -27,7 +27,7 @@ namespace HashTables
 
         public void Add(string key, string value)
         {
-            Node newEntry = new Node() { Value = value , Key = key }; //Store both key and value to ref later
+            Node newEntry = new Node() { Value = value, Key = key }; //Store both key and value to ref later
             key = key.ToLower(); //Normalize the key
             int index = GetHash(key); //get our index to put the value into
             if (Table[index] == null)
@@ -47,7 +47,7 @@ namespace HashTables
             {
                 if (node.Key.ToLower() == key) return node.Value;
             }
-            
+
             return null; //If we hashed out to something but it dosen't contain our key
         }
     }
