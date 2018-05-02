@@ -6,12 +6,12 @@ namespace TreeIntersection
 {
     public class MyHashTable
     {
-        private Node[] Table;
+        private LinkedList<Node>[] Table;
         private int primeFactor = 599;
 
         public MyHashTable()
         {
-            Table = new Node[1024]; //Init our table on instantiation
+            Table = new LinkedList<Node>[1024]; //Init our table on instantiation
         }
 
         public int GetHash(string key)
@@ -30,26 +30,25 @@ namespace TreeIntersection
             Node newEntry = new Node() { Value = value, Key = key }; //Store both key and value to ref later
             key = key.ToLower(); //Normalize the key
             int index = GetHash(key); //get our index to put the value into
-            if (Table[index] != null) //If something is there add to the linked list
+            if (Table[index] == null)
             {
-                Table[index].Next = newEntry;
+                Table[index] = new LinkedList<Node>();
+                Table[index].AddFirst(newEntry);
             }
-            if (Table[index] == null) //If empty just add the node
-            {
-                Table[index] = newEntry;
-            }
+            else Table[index].AddFirst(newEntry);
         }
 
         public string Contains(string key)
         {
             key = key.ToLower();
-            Node target = Table[GetHash(key)]; //Find out linked list by it's hash
-            if (target == null) return null;
-            while (target.Key.ToLower() != key) //If we don't have the right key look to the next list item
+            int index = GetHash(key);
+            if (Table[index] == null) return null;
+            foreach (Node node in Table[index])
             {
-                target = target.Next;
+                if (node.Key.ToLower() == key) return node.Value;
             }
-            return target.Value; //Return the value
+
+            return null; //If we hashed out to something but it dosen't contain our key
         }
     }
 }

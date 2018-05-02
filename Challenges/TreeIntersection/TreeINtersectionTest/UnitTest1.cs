@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
+using Xunit;
+using TreeIntersection;
+using static TreeIntersection.Program;
 
-namespace TreeIntersection
+namespace TreeINtersectionTest
 {
-    public class Program
+    public class UnitTest1
     {
-        static void Main(string[] args)
+        [Theory]
+        [InlineData("900")]
+        [InlineData("345")]
+        [InlineData("1")]
+        public void CanCompareTrees(string testValue)
         {
+            //Arrange
             MyTree treeOne = new MyTree()
             {
                 Root = new Node() //Root Level
@@ -24,7 +31,7 @@ namespace TreeIntersection
                             Value = "160",
                             LeftChild = new Node() //Row 3
                             {
-                                Value = "125"
+                                Value = testValue
                             },
                             RightChild = new Node() //Row 3
                             {
@@ -72,7 +79,7 @@ namespace TreeIntersection
                             Value = "160",
                             LeftChild = new Node() //Row 3
                             {
-                                Value = "125"
+                                Value = testValue
                             },
                             RightChild = new Node() //Row 3
                             {
@@ -103,31 +110,7 @@ namespace TreeIntersection
                 }
             };
 
-            foreach (string item in Tree_Intersection(treeOne, treeTwo))
-            {
-                Console.WriteLine(item);
-            }
-            Console.ReadLine();
-        }
-
-        public static List<string> Tree_Intersection(MyTree firstTree, MyTree secondTree)
-        {
-            MyHashTable stepTable = new MyHashTable();
-            List<string> returnList = new List<string>();
-            string[] treeOneString = firstTree.PreOrder().Split(" ");
-            foreach (string item in treeOneString)
-            {
-                stepTable.Add(item, item);
-            }
-            string[] treeTwoString = secondTree.PreOrder().Split(" ");
-            foreach (string item in treeTwoString)
-            {
-                if (stepTable.Contains(item) == item)
-                {
-                    returnList.Add(item);
-                }
-            }
-            return returnList;
+            Assert.Contains(testValue, Tree_Intersection(treeOne, treeTwo));
         }
     }
 }
