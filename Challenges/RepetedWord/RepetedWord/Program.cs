@@ -14,8 +14,9 @@ namespace RepetedWord
 
         public static string CheckForDupe(string source)
         {
-            string[] sourceArray = source.Split(" ");
+            string[] sourceArray = source.Split(" "); //split out input string into an Array
             MyHashTable checkTable = new MyHashTable();
+            //For every item in our array check if it exisits in the table. If it dose return that word if not add it to our table
             foreach (string word in sourceArray)
             {
                 if (checkTable.Contains(word) != null) return word;
