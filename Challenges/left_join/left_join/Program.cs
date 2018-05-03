@@ -30,19 +30,27 @@ namespace left_join
 
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Merge two hashtables using left join logic. Keeping everything on the initial table and only adding things from the right that share a key
+        /// </summary>
+        /// <param name="tableOne"></param>
+        /// <param name="tableTwo"></param>
+        /// <returns></returns>
         public static List<string> LeftJoin(MyHashTable tableOne, MyHashTable tableTwo)
         {
             List<string> returnTable = new List<string>();
             foreach (LinkedList<Node> item in tableOne.Table)
             {
-                if (item != null)
+                if (item != null) // if the index is not empty
                 {
+                    // if their is a shared key on the second table...
                     if (tableTwo.Contains(item.First.Value.Key) != null)
                     {
+                        // ... add the key and both values to a string and drop it into our return list
                         returnTable.Add($"{item.First.Value.Key} {tableOne.Contains(item.First.Value.Key)} {tableTwo.Contains(item.First.Value.Key)}");
                     }
-                    if (item != null && tableTwo.Contains(item.First.Value.Key) is null)
+                    // if there is no matching key on the second table just add the first tables pair
+                    if (tableTwo.Contains(item.First.Value.Key) is null)
                     {
                         returnTable.Add($"{item.First.Value.Key} {item.First.Value.Value}");
                     }
