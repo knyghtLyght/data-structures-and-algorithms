@@ -20,19 +20,35 @@ namespace left_join
             testTableTwo.Add("diligent", "idle");
             testTableTwo.Add("guide", "follow");
             testTableTwo.Add("flow", "jam");
+
+            List<string> joinedList = LeftJoin(testTableOne, testTableTwo);
+
+            foreach (var item in joinedList)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadLine();
         }
 
-        public static MyHashTable LeftJoin(MyHashTable tableOne, MyHashTable tableTwo)
+        public static List<string> LeftJoin(MyHashTable tableOne, MyHashTable tableTwo)
         {
             List<string> returnTable = new List<string>();
             foreach (LinkedList<Node> item in tableOne.Table)
             {
-                string key = item.First.Value.Key;
-                if (tableTwo.Contains(key) != null)
+                if (item != null)
                 {
-                    
+                    if (tableTwo.Contains(item.First.Value.Key) != null)
+                    {
+                        returnTable.Add($"{item.First.Value.Key} {tableOne.Contains(item.First.Value.Key)} {tableTwo.Contains(item.First.Value.Key)}");
+                    }
+                    if (item != null && tableTwo.Contains(item.First.Value.Key) is null)
+                    {
+                        returnTable.Add($"{item.First.Value.Key} {item.First.Value.Value}");
+                    }
                 }
             }
+            return returnTable;
         }
     }
 }
