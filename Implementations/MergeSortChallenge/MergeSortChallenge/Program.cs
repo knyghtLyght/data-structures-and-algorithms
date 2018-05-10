@@ -21,13 +21,13 @@ namespace MergeSortChallenge
             Console.ReadLine();
         }
 
-        public static int[] MergeSort(int[] input)
+        public static int[] MergeSort(int[] input) //Base level and range setup. Also returns the complete recursion
         {
-            MergeSort(input, 0, input.Length - 1);
+            MergeSort(input, 0, input.Length - 1); //set our bounds
             return input;
         }
 
-        public static void MergeSort(int[] input, int low, int high)
+        public static void MergeSort(int[] input, int low, int high) //overload to preform the actual resursion
         {
             if (low < high)
             {
