@@ -25,10 +25,10 @@ namespace QuickSortImp
             int i;
             if (start < end)
             {
-                i = Partition(input, start, end);
+                i = Partition(input, start, end); //Split and sort
 
-                QuickSort(input, start, i - 1);
-                QuickSort(input, i + 1, end);
+                QuickSort(input, start, i - 1); //Run the sort on the first half
+                QuickSort(input, i + 1, end); //Run the sort on the second hlaf
             }
         }
 
