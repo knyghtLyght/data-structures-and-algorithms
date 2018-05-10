@@ -12,7 +12,7 @@ namespace QuickSortImp
                 Console.WriteLine(item);
             }
             Console.WriteLine();
-            QuickSort(testArray, 0, testArray.Length);
+            QuickSort(testArray, 0, testArray.Length-1);
             foreach (int item in testArray)
             {
                 Console.WriteLine(item);
@@ -20,48 +20,39 @@ namespace QuickSortImp
             Console.ReadLine();
         }
 
-        public static void QuickSort(int[] input, int startIndex, int endIndex)
+        public static void QuickSort(int[] input, int start, int end)
         {
-            int left = startIndex, right = endIndex;
-            int pivot = input[(startIndex + endIndex) / 2];
-
-            while (left < right)
+            int i;
+            if (start < end)
             {
-                while ((input[right] >= pivot) && (left < right))
-                {
-                    right--;
-                }
+                i = Partition(input, start, end);
 
-                if (left != right)
-                {
-                    input[left] = input[right];
-                    left++;
-                }
+                QuickSort(input, start, i - 1);
+                QuickSort(input, i + 1, end);
+            }
+        }
 
-                while ((input[left] <= pivot) && (left < right))
-                {
-                    left++;
-                }
+        public static int Partition(int[] input, int start, int end)
+        {
+            int temp;
+            int right = input[end];
+            int i = start - 1;
 
-                if (left != right)
+            for (int j = start; j <= end - 1; j++)
+            {
+                if (input[j] <= right)
                 {
-                    input[right] = input[left];
-                    right--;
+                    i++;
+                    temp = input[i];
+                    input[i] = input[j];
+                    input[j] = temp;
                 }
             }
 
-            input[left] = pivot;
-            pivot = left;
-
-            if (left < pivot)
-            {
-                QuickSort(input, left, pivot - 1);
-            }
-
-            if (right > pivot)
-            {
-                QuickSort(input, pivot + 1, right);
-            }
+            temp = input[i + 1];
+            input[i + 1] = input[end];
+            input[end] = temp;
+            return i + 1;
         }
     }
 }
