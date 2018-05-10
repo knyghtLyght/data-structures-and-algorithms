@@ -31,59 +31,59 @@ namespace MergeSortChallenge
         {
             if (low < high)
             {
-                int middle = (low / 2) + (high / 2);
-                MergeSort(input, low, middle);
-                MergeSort(input, middle + 1, high);
-                Merge(input, low, middle, high);
+                int middle = (low / 2) + (high / 2); //Split our input
+                MergeSort(input, low, middle);  //Pass our first new set in
+                MergeSort(input, middle + 1, high); //Pass our second new set in
+                Merge(input, low, middle, high); //Sort and merge the cuurent set
             }
         }
 
         private static void Merge(int[] input, int low, int middle, int high)
         {
 
-            int left = low;
-            int right = middle + 1;
-            int[] tmp = new int[(high - low) + 1];
-            int tmpIndex = 0;
+            int left = low; //Set our left pointer
+            int right = middle + 1; // set our right pointer
+            int[] tmp = new int[(high - low) + 1]; //int our temp array
+            int tmpIndex = 0; //Establish our variable that places our values. 
 
-            while ((left <= middle) && (right <= high))
+            while ((left <= middle) && (right <= high)) //While our pointers are not out of range
             {
-                if (input[left] < input[right])
+                if (input[left] < input[right]) //If our left value is smaller
                 {
-                    tmp[tmpIndex] = input[left];
-                    left = left + 1;
+                    tmp[tmpIndex] = input[left]; //grab our target
+                    left = left + 1; //Move the left pointer down the array to the right
                 }
                 else
                 {
-                    tmp[tmpIndex] = input[right];
-                    right = right + 1;
+                    tmp[tmpIndex] = input[right]; //grab our target
+                    right = right + 1; //move the right pointer down the array to the right
                 }
-                tmpIndex = tmpIndex + 1;
+                tmpIndex = tmpIndex + 1; //Move the value one to the right
             }
 
-            if (left <= middle)
+            if (left <= middle) //If we have not reached the middle
             {
                 while (left <= middle)
                 {
-                    tmp[tmpIndex] = input[left];
-                    left = left + 1;
-                    tmpIndex = tmpIndex + 1;
+                    tmp[tmpIndex] = input[left]; //move the target
+                    left = left + 1; //move our pointer up
+                    tmpIndex = tmpIndex + 1; //move up our temp array too
                 }
             }
 
-            if (right <= high)
+            if (right <= high) //If we have not reached the end
             {
                 while (right <= high)
                 {
-                    tmp[tmpIndex] = input[right];
-                    right = right + 1;
-                    tmpIndex = tmpIndex + 1;
+                    tmp[tmpIndex] = input[right]; //Move our target
+                    right = right + 1; //move our pointer up
+                    tmpIndex = tmpIndex + 1; //Move up our temp array
                 }
             }
 
-            for (int i = 0; i < tmp.Length; i++)
+            for (int i = 0; i < tmp.Length; i++) //For everyhting in our temp array
             {
-                input[low + i] = tmp[i];
+                input[low + i] = tmp[i]; //Place our values
             }
         }
     }
