@@ -62,6 +62,6 @@ namespace QuickSortImp
             {
                 QuickSort(input, pivot + 1, right);
             }
-    }
+        }
     }
 }
