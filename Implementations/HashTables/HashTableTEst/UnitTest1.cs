@@ -33,5 +33,19 @@ namespace HashTableTEst
             //Assert
             Assert.Equal(value, testTable.Contains(key));
         }
+
+        [Theory]
+        [InlineData("Grades", "90")]
+        [InlineData("Pass", "Yes")]
+        [InlineData("Time", "Needs managment")]
+        public void CanCheckContents(string key, string value)
+        {
+            //Arrange
+            MyHashTable testTable = new MyHashTable();
+            //Act
+            testTable.Add(key, value);
+            //Assert
+            Assert.Equal(value, testTable.Contains(key));
+        }
     }
 }
