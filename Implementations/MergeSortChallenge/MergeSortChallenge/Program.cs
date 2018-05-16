@@ -29,7 +29,7 @@ namespace MergeSortChallenge
 
         public static void MergeSort(int[] input, int low, int high) //overload to preform the actual resursion
         {
-            if (low < high)
+            if (low < high) //Base case and check for tiny array
             {
                 int middle = (low / 2) + (high / 2); //Split our input
                 MergeSort(input, low, middle);  //Pass our first new set in
