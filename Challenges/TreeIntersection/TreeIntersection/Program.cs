@@ -113,13 +113,18 @@ namespace TreeIntersection
         public static List<string> Tree_Intersection(MyTree firstTree, MyTree secondTree)
         {
             MyHashTable stepTable = new MyHashTable();
+            //Init our return list
             List<string> returnList = new List<string>();
+            //Split the first tree into an array
             string[] treeOneString = firstTree.PreOrder().Split(" ");
+            //Push tree one into the step table
             foreach (string item in treeOneString)
             {
                 stepTable.Add(item, item);
             }
+            //Split the second tree into an array
             string[] treeTwoString = secondTree.PreOrder().Split(" ");
+            //Push tree two string into the return table
             foreach (string item in treeTwoString)
             {
                 if (stepTable.Contains(item) == item)
