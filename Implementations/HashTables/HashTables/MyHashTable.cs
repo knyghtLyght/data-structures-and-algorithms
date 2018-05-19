@@ -14,7 +14,8 @@ namespace HashTables
         /// </summary>
         public MyHashTable()
         {
-            Table = new LinkedList<Node>[1024]; //Init our table on instantiation
+            //Init our table on instantiation
+            Table = new LinkedList<Node>[1024];
         }
 
         /// <summary>
@@ -24,11 +25,12 @@ namespace HashTables
         /// <returns></returns>
         public int GetHash(string key)
         {
-            int hash = 0; //Set our starting hash
-
-            foreach (char item in key) hash += item; //Convert the string into an int
-
-            hash = hash * primeFactor % Table.Length; //Hash it
+            //Set our starting hash
+            int hash = 0;
+            //Convert the string into an int
+            foreach (char item in key) hash += item;
+            //Hash it
+            hash = hash * primeFactor % Table.Length;
 
             return hash;
         }
@@ -40,9 +42,12 @@ namespace HashTables
         /// <param name="value"></param>
         public void Add(string key, string value)
         {
-            Node newEntry = new Node() { Value = value , Key = key }; //Store both key and value to ref later
-            key = key.ToLower(); //Normalize the key
-            int index = GetHash(key); //get our index to put the value into
+            //Store both key and value to ref later
+            Node newEntry = new Node() { Value = value , Key = key };
+            //Normalize the key
+            key = key.ToLower();
+            //get our index to put the value into
+            int index = GetHash(key); 
             if (Table[index] == null)
             {
                 Table[index] = new LinkedList<Node>();
