@@ -2,7 +2,7 @@
 
 namespace QuickSortImp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -26,18 +26,23 @@ namespace QuickSortImp
             if (start < end)
             {
                 i = Partition(input, start, end); //Split and sort
-
-                QuickSort(input, start, i - 1); //Run the sort on the first half
-                QuickSort(input, i + 1, end); //Run the sort on the second hlaf
+                //Run the sort on the first half
+                QuickSort(input, start, i - 1);
+                //Run the sort on the second half
+                QuickSort(input, i + 1, end); 
             }
         }
 
         public static int Partition(int[] input, int start, int end)
         {
+            //Picot point
             int temp;
+            //Right bound of partition
             int right = input[end];
+            //Left bound of partition
             int i = start - 1;
 
+            //Sorting loop
             for (int j = start; j <= end - 1; j++)
             {
                 if (input[j] <= right)
@@ -48,7 +53,7 @@ namespace QuickSortImp
                     input[j] = temp;
                 }
             }
-
+            //Move the pivot point
             temp = input[i + 1];
             input[i + 1] = input[end];
             input[end] = temp;
