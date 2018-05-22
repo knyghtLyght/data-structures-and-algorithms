@@ -46,12 +46,12 @@ namespace RadixSortProject
             {
                 //Exit condition
                 isFinished = true;
-                //Loop through the array and sort each value into the correct bucket based on the sig fig
+                //Loop through the array and sort each value into the correct bucket based on the significant figure
                 foreach (int value in array)
                 {
                     //Find our current bucket
                     int bucketKey = (value / (int)Math.Pow(10, digitPosition)) % 10;
-                    //Seet our flag based on the sig fig
+                    //Set our flag based on the significant figure
                     if (bucketKey > 0)
                     {
                         isFinished = false;
@@ -61,7 +61,7 @@ namespace RadixSortProject
                 }
 
                 int i = 0;
-                //Pull our values out and palce them in the new sorted order
+                //Pull our values out and place them in the new sorted order
                 foreach (Queue<int> bucket in buckets)
                 {
                     while (bucket.Count > 0)
@@ -70,7 +70,7 @@ namespace RadixSortProject
                         i++;
                     }
                 }
-                //Move to the next sig fig
+                //Move to the next significant figure
                 digitPosition++;
             }
             return array;
