@@ -19,7 +19,12 @@ namespace QuickSortImp
             }
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Recursive calls and partitioning
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
         public static void QuickSort(int[] input, int start, int end)
         {
             int i;
@@ -33,6 +38,13 @@ namespace QuickSortImp
             }
         }
 
+        /// <summary>
+        /// Helper that preforms the actual sort
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns>the new pivot point</returns>
         public static int Partition(int[] input, int start, int end)
         {
             //Picot point
