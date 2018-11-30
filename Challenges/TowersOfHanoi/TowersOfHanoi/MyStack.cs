@@ -11,7 +11,7 @@ namespace TowersOfHanoi
 
         public MyStack(Node node)
         {
-            Top = node; //Set Top ref to inital node
+            Top = node; //Set Top ref to initial node
         }
         public MyStack() //default constructor
         {

@@ -5,6 +5,7 @@ Intended to show deliberate practice in algorithms, testing and documentation
 Implementations
 
 - [Insertion sort read me](./Implementations/InsertionSort)
+- [Binary tree with distance function](./Implementations/BST)
 
 Challenges
 
