@@ -9,6 +9,6 @@ Implementations
 
 Challenges
 
-- [Radix sort read me](./Challenges/RadixSortProject/RadixSortProject/ReadMe.md)
-- [Towers of Hanoi](./Challenges/TowersOfHanoi/ReadMe.md)
+- [Radix sort read me](./Challenges/RadixSortProject/RadixSortProject)
+- [Towers of Hanoi](./Challenges/TowersOfHanoi)
 - [Find values in a K-ary tree](./Challenges/find_matches)
