@@ -2,7 +2,7 @@
 
 namespace FactorialCheck
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@ namespace FactorialCheck
         /// </summary>
         /// <param name="n"></param>
         /// <returns>The Factorial of the parameter n </returns>
-        static int Factorial(int n)
+        public static int Factorial(int n)
         {
             if (n < 0)
             {
