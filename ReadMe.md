@@ -4,7 +4,7 @@ Intended to show deliberate practice in algorithms, testing and documentation
 
 Implementations
 
-- [Insertion sort read me](./Implementations/InsertionSort/ReadMe.md)
+- [Insertion sort read me](./Implementations/InsertionSort)
 
 Challenges
 
