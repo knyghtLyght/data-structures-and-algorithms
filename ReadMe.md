@@ -1,6 +1,6 @@
 # Collection of whiteboard and data structure challeneges.
 
-Intended to shoe deliberate practice, testing and documentation
+Intended to show deliberate practice in algorithms, testing and documentation
 
 Implementations
 
