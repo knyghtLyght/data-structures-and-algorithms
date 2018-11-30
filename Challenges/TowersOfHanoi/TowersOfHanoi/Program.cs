@@ -36,13 +36,13 @@ namespace TowersOfHanoi
             }
             else
             {
-                //Switch twoers and call the method again while decrimenting n
+                //Switch towers and call the method again while decrementing n
                 TowersOfHanoi(n - 1, fromT, toT, auxT);
                 //Move disk
                 toT.Push(fromT.Pop());
                 //Print move
                 Console.WriteLine($"Move disk {n} from tower {fromT.Name} to tower {toT.Name}");
-                //Switch towers and call the method again while decrimenting n
+                //Switch towers and call the method again while decrementing n
                 TowersOfHanoi(n - 1, auxT, fromT, toT);
             }
         }
