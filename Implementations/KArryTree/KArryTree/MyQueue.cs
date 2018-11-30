@@ -10,7 +10,7 @@ namespace KArryTree
 
         public MyQueue(Node node)
         {
-            Front = node; //Set inital node to the front
+            Front = node; //Set initial node to the front
             node.Next = null;
         }
 

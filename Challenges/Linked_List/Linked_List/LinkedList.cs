@@ -13,7 +13,7 @@ namespace Linked_List
         public void Add(int value)
         {
             Node newNode = new Node(); //Make the new Node
-            newNode.Next = head; // Set the nodes referance for the first in the list
+            newNode.Next = head; // Set the nodes reference for the first in the list
             newNode.Value = value; // Set the new nodes data
             head = newNode; //set the new node as the head or fist in the list
         }

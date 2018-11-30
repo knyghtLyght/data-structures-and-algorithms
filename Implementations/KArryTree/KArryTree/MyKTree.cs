@@ -34,7 +34,7 @@ namespace KArryTree
         {
             MyQueue stepQueue = new MyQueue(Root); //Init traversal queue
             Node runner = Root;
-            while (stepQueue.Peek() != null) //While there is somethign in the queue keep going
+            while (stepQueue.Peek() != null) //While there is something in the queue keep going
             {
                 //If we found what we want break
                 if (runner.Value == targetNodeValue)
@@ -52,7 +52,7 @@ namespace KArryTree
                 stepQueue.Dequeue(); //drop the last checked node
                 runner = stepQueue.Front; //Move the runner
             }
-            return new Node();
+            return new Node(); // if the target value was not found return an empty node
         }
 
         public void Add(int targetNodeValue, int valueToAdd)

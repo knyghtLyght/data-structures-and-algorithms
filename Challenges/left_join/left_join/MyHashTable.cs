@@ -48,7 +48,7 @@ namespace left_join
                 if (node.Key.ToLower() == key) return node.Value;
             }
 
-            return null; //If we hashed out to something but it dosen't contain our key
+            return null; //If we hashed out to something but it doesn't contain our key
         }
     }
 }
