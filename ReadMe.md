@@ -12,3 +12,4 @@ Challenges
 - [Radix sort read me](./Challenges/RadixSortProject/RadixSortProject)
 - [Towers of Hanoi](./Challenges/TowersOfHanoi)
 - [Find values in a K-ary tree](./Challenges/find_matches)
+- [Factorial check](./Challenges/FactorialCheck)
