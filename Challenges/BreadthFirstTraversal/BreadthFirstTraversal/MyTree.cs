@@ -16,7 +16,7 @@ namespace BreadthFirstTraversal
 
         public void Add(Node add)
         {
-
+            //Not a full tree implementation 
         }
 
         public string InOrder()
@@ -38,6 +38,7 @@ namespace BreadthFirstTraversal
             }
         }
 
+        //Depth first traversals
         public string PreOrder()
         {
             TraversalString = "";
