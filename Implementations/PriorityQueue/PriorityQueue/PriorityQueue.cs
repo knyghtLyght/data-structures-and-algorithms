@@ -155,12 +155,32 @@ namespace PriorityQueue
         }
 
         /// <summary>
+        /// Top down node Sink
         /// Helper method that orders the heap by moving a node down the tree
         /// </summary>
         /// <param name="i"></param>
         private void Sink(int i)
         {
-            throw new NotImplementedException();
+            while (true)
+            {
+                int left = 2 * i + 1; // Left node
+                int right = 2 * i + 2; // Right node
+                int smallest = left; // Assume keft is the smallest
+
+                // Check smallest assumption and correct if needed
+                if (right < heapSize && Less(right, left))
+                {
+                    smallest = right;
+                }
+
+                // Stop if we are outside the bounds of the tree 
+                // or if we cannot sink i anymore
+                if (left >= heapSize || Less(i, smallest)) break;
+
+                // Move down the tree following the smallest node
+                swap(smallest, i);
+                i = smallest;
+            }
         }
 
         /// <summary>
@@ -177,9 +197,26 @@ namespace PriorityQueue
             while (i > 0 && Less(i, parent))
             {
                 // Exchange i with the parent
-                Swap(parent, i)
+                Swap(parent, i);
+                i = parent;
+
+                // Grab the index of the next node
+                parent = (i - 1) / 2;
             }
         }
+
+        /// <summary>
+        /// Helper method to swap in the heap and the map
+        /// </summary>
+        private void Swap(int i, int j)
+        {
+            T iElement = heap[i];
+            T jElement = heap[j];
+
+            heap[i] = jElement;
+            heap[j] = iElement;
+        }
+
 
         /// <summary>
         /// Helper method intended to determin if node i is less than node j
