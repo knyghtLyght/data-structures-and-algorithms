@@ -169,7 +169,16 @@ namespace PriorityQueue
         /// <param name="i"></param>
         private void Swim(int i)
         {
-            throw new NotImplementedException();
+            // Grab the index of the next parent node WRT to k
+            int parent = (i - 1) / 2;
+
+            // Keep swimming while we have not reached the
+            // root and while we're klless than our parent
+            while (i > 0 && Less(i, parent))
+            {
+                // Exchange i with the parent
+                Swap(parent, i)
+            }
         }
 
         /// <summary>
