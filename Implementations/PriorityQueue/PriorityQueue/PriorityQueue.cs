@@ -129,17 +129,60 @@ namespace PriorityQueue
         /// <param name="item"></param>
         public void Add(T item)
         {
-            
+            if (item == null) throw new ArgumentNullException();
+
+            heap.Add(item);
+
+            // Try to add the item and it's index to the map
+            if (!map.TryAdd(item, new List<int> { heapSize }))
+            {
+                // If the itew already exists add another location to the list
+                map[item].Add(heapSize);
+            }
+
+            Swim(heapSize);
+            heapSize++;
         }
 
-        private T RemoveAt(int v)
+        /// <summary>
+        /// Helper method for removing spesific nodes
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        private T RemoveAt(int i)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Helper method that orders the heap by moving a node down the tree
+        /// </summary>
+        /// <param name="i"></param>
         private void Sink(int i)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Helper method that orders the heap by moving a node up the tree
+        /// </summary>
+        /// <param name="i"></param>
+        private void Swim(int i)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Helper method intended to determin if node i is less than node j
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <returns></returns>
+        private bool Less(int i, int j)
+        {
+            T node1 = heap[i];
+            T node2 = heap[j];
+            return node1.CompareTo(node2) <= 0;
         }
     }
 }
