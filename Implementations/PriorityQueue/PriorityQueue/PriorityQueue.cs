@@ -145,16 +145,6 @@ namespace PriorityQueue
         }
 
         /// <summary>
-        /// Helper method for removing spesific nodes
-        /// </summary>
-        /// <param name="i"></param>
-        /// <returns></returns>
-        private T RemoveAt(int i)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Top down node Sink
         /// Helper method that orders the heap by moving a node down the tree
         /// </summary>
@@ -181,6 +171,11 @@ namespace PriorityQueue
                 swap(smallest, i);
                 i = smallest;
             }
+        }
+
+        private void swap(int smallest, int i)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -215,6 +210,44 @@ namespace PriorityQueue
 
             heap[i] = jElement;
             heap[j] = iElement;
+
+            mapSwap(iElement, jElement, i, j);
+        }
+
+        private void mapSwap(T iElement, T jElement, int i, int j)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Remove(T element)
+        {
+            if (element == null) return false;
+
+            // Linear scan removal O(n)
+            //for (int i = 0; i < heapSize; i++)
+            //{
+            //    if (element.Equals(heap[i]))
+            //    {
+            //        RemoveAt(i);
+            //        return true;
+            //    }
+            //}
+
+            // Logarithmic removal with mpa O(log(n))
+            int index = map[element][map[element].Count -1];
+            if (index > -1) RemoveAt(index);
+            return index > -1;
+
+        }
+
+        /// <summary>
+        /// Helper method for removing spesific nodes
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        private T RemoveAt(int i)
+        {
+            throw new NotImplementedException();
         }
 
 
